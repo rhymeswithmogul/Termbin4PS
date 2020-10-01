@@ -1,0 +1,74 @@
+﻿TOPIC
+    about_termbin4ps
+
+SHORT DESCRIPTION
+    Termbin4PS is a module that will upload its input to Termbin.
+
+LONG DESCRIPTION
+    Termbin is a wonderful online service (in this author's opinion) that takes
+    whatever plain text it is given and uploads it to a web server. From there,
+    it can be easily shared with the world.  However, getting data to it relies
+    on the third-party tool Netcat. While it is usually included with macOS and
+    Linux, it is not a part of Windows.
+    
+    Termbin4PS is a PowerShell module (compatible with Core editions) that uses
+    native .NET functionality to feed data to Termbin, eliminating the need for
+    Netcat to be installed.
+    
+    Upon success, the user will be given a URL like https://termbin.com/abc123
+    that they can share with anyone, as if they had used Netcat.
+
+EXAMPLES
+    For example, if you want to share the contents of a log file, do this, and
+    be sure to specify the -Raw switch to Get-Content so that line endings are
+    not stripped:
+    
+    PS C:> Get-Content -Raw 'logfile.txt' | Send-Termbin
+    
+    Or, if you want to show someone which processes are running on your system,
+    you can do something like this:
+    
+    PS /Users/username> Get-Process | Out-String | Send-Termbin
+    
+    Pipe it through Out-String so that 
+
+NOTE
+    This module is in no way related to Termbin, nor is it related to solusipse
+    or his fiche project on GitHub. I'm just a fan of Termbin who tends to work
+    on Windows systems, and usually needs to share something with someone.
+
+TROUBLESHOOTING NOTE
+    Termbin works great under shells like Bash, because those tend to deal with
+    plain text input and output. However, PowerShell is written in .NET, and it 
+    passes objects down the pipeline. Thus, you will usually find that you need
+    to send your data through the cmdlet Out-String to convert it before piping
+    it into Send-Termbin.   If you forget to do this, chances are that you will
+    end up with a Termbin page full of class names.  For example:
+    
+    PS C:\> Get-Process | Where {$_ -Match 'pwsh'}
+
+    NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+    ------    -----      -----     ------      --  -- -----------
+        0     0.00      38.98       4.39   29129 …29 pwsh
+        0     0.00      60.63      16.06   29144 …44 pwsh
+
+    While it looks fine on the screen, that's because PowerShell quietly passed
+    it to Out-String, that same text turned into this when it reached Termbin:
+
+    System.Diagnostics.Process (pwsh)System.Diagnostics.Process (pwsh)
+    
+    Always pass it through Out-String!  Alternatively, if using Get-Content, be
+    sure you include its -Raw switch; otherwise, PowerShell will strip the line
+    endings, leaving you with a jumbled mess.
+
+SEE ALSO
+    Send-Termbin
+    Out-String
+    https://termbin.com
+    https://github.com/solusipse/fiche
+    https://github.com/rhymeswithmogul/Termbin4PS/
+
+KEYWORDS
+    - Termbin
+    - Termbin_for_PS
+    - Termbin_for_PowerShell
