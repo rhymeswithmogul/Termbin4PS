@@ -23,7 +23,7 @@
 RootModule = 'Termbin4PS.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.0'
+ModuleVersion = '1.0'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop', 'Core')
@@ -96,8 +96,9 @@ AliasesToExport = @()
 
 # List of all files packaged with this module
 FileList = @(
-    'en-US/about_Termbin4PS.ps1xml',
-    'en-US/Send-Termbin.ps1xml',
+    'en-US/about_Termbin4PS.help.txt',
+    'en-US/Termbin4PS-help.xml',
+    'AUTHORS',
     'ChangeLog',
     'COPYING',
     'LICENSE',
