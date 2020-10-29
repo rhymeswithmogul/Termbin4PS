@@ -114,7 +114,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = @('termbin', 'share', 'terminal', 'output')
+        Tags = @('termbin', 'share', 'terminal', 'output', 'fiche')
 
         # A URL to the license for this module.
         LicenseUri = 'https://www.gnu.org/licenses/agpl-3.0.en.html'
