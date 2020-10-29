@@ -16,7 +16,7 @@
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Send-Termbin</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:Description>
             <maml:para>One or more strings to send to Termbin.</maml:para>
@@ -77,7 +77,7 @@
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>InputObject</maml:name>
         <maml:Description>
           <maml:para>One or more strings to send to Termbin.</maml:para>
@@ -158,6 +158,10 @@ https://termbin.com/def456</dev:code>
       </command:example>
     </command:examples>
     <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Send-Termbin_en-US.md</maml:uri>
+      </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>about_Termbin4PS</maml:linkText>
         <maml:uri></maml:uri>

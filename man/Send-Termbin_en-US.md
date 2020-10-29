@@ -1,7 +1,7 @@
 ---
 external help file: Termbin4PS-help.xml
 Module Name: Termbin4PS
-online version:
+online version: https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Send-Termbin_en-US.md
 schema: 2.0.0
 ---
 
@@ -13,7 +13,7 @@ Send some text to Termbin.
 ## SYNTAX
 
 ```
-Send-Termbin [-InputObject] <String[]> [[-Timeout] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Send-Termbin [[-InputObject] <String[]>] [[-Timeout] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,7 +64,7 @@ Type: String[]
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 ```
 
 ### -Timeout
-This cmdlet will wait a specified number of milliseconds before returning a failure.  For most people, 30,000 ms (30 s) will be more than enough time.  However, if you are behind a very slow connection, you may want to increase this value.  You may specify any value from 1 ms to 2,147,473,647 ms.  The value 0 will cause this cmdlet to wait forever.
+This cmdlet will wait a specified number of milliseconds before returning a failure.  For most people, 30,000 ms (30 s) will be more than enough time.  However, if you are behind a very slow connection, you may want to increase this value.  You may specify any value from 1 ms to 2,147,473,647 ms.  The value 0 will cause this cmdlet to wait forever.
 
 ```yaml
 Type: Int32
@@ -115,6 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 In almost all cases, you will want to pipe this cmdlet's input through Out-String so that it is normalized.  If this cmdlet's input does not have a .ToString() method, you may wind up with a Termbin upload full of class names, or worse.
 
 ## RELATED LINKS
+
 [about_Termbin4PS](about_Termbin4PS)
 [Out-String](Out-String)
 [Termbin:](https://termbin.com)

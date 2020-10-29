@@ -1,5 +1,11 @@
 Termbin4PS -- history of user-visible changes.  Last update: 2020-09-30
 
+Termbin4PS version 1.0.1, released 2020-10-29
+---------------------------------------------
+You can now view help online by running:  Get-Help Send-Termbin -Online.
+That is the only change.
+
+
 Termbin4PS version 1.0, released 2020-09-30
 -------------------------------------------
 This is the first release, so everything is new.  For more information, please
