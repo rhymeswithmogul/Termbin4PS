@@ -2,8 +2,8 @@
 <helpItems schema="maml" xmlns="http://msh">
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Send-Termbin</command:name>
-      <command:verb>Send</command:verb>
+      <command:name>Out-Termbin</command:name>
+      <command:verb>Out</command:verb>
       <command:noun>Termbin</command:noun>
       <maml:description>
         <maml:para>Send some text to Termbin.</maml:para>
@@ -15,7 +15,7 @@
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Send-Termbin</maml:name>
+        <maml:name>Out-Termbin</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>InputObject</maml:name>
           <maml:Description>
@@ -137,12 +137,13 @@
     <maml:alertSet>
       <maml:alert>
         <maml:para>In almost all cases, you will want to pipe this cmdlet's input through Out-String so that it is normalized.  If this cmdlet's input does not have a .ToString() method, you may wind up with a Termbin upload full of class names, or worse.</maml:para>
+        <maml:para>In the past, this cmdlet was called Send-Termbin.  That alias still works.</maml:para>
       </maml:alert>
     </maml:alertSet>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-Process | Out-String | Send-Termbin
+        <dev:code>PS C:\&gt; Get-Process | Out-String | Out-Termbin
 https://termbin.com/abc123</dev:code>
         <dev:remarks>
           <maml:para>This will take the output of Get-Process and upload it to Termbin.  If successful, a URL will be returned.</maml:para>
@@ -150,7 +151,7 @@ https://termbin.com/abc123</dev:code>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-Content -Raw 'logfile.txt' | Out-String | Send-Termbin
+        <dev:code>PS C:\&gt; Get-Content -Raw 'logfile.txt' | Out-String | Out-Termbin
 https://termbin.com/def456</dev:code>
         <dev:remarks>
           <maml:para>This will read the file logfile.txt and upload it to Termbin.  If successful, a URL will be returned.  When using Get-Content, be sure to include the -Raw parameter, as that cmdlet will strip line endings and leave you with barely-legible output.  Alternatively, you may pipe it through Out-String as in the previous example.</maml:para>
@@ -160,7 +161,7 @@ https://termbin.com/def456</dev:code>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Send-Termbin_en-US.md</maml:uri>
+        <maml:uri>https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Out-Termbin_en-US.md</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>about_Termbin4PS</maml:linkText>

@@ -19,10 +19,11 @@
 
 #Requires -Version 5.0
 
-# .ExternalHelp Send-Termbin.xml
-Function Send-Termbin {
+# .ExternalHelp Out-Termbin.xml
+Function Out-Termbin {
 	[CmdletBinding(SupportsShouldProcess, ConfirmImpact='Low')]
 	[OutputType([System.Uri])]
+	[Alias('Send-Termbin')]
 	Param(
 		[Parameter(Position=0, ValueFromPipeline)]
 		[String[]] $InputObject,

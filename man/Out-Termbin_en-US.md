@@ -1,11 +1,11 @@
 ---
 external help file: Termbin4PS-help.xml
 Module Name: Termbin4PS
-online version: https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Send-Termbin_en-US.md
+online version: https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Out-Termbin_en-US.md
 schema: 2.0.0
 ---
 
-# Send-Termbin
+# Out-Termbin
 
 ## SYNOPSIS
 Send some text to Termbin.
@@ -13,7 +13,7 @@ Send some text to Termbin.
 ## SYNTAX
 
 ```
-Send-Termbin [[-InputObject] <String[]>] [[-Timeout] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Out-Termbin [[-InputObject] <String[]>] [[-Timeout] <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +25,7 @@ When using this cmdlet, you more than likely want to pipe your input through Out
 
 ### Example 1
 ```powershell
-PS C:\> Get-Process | Out-String | Send-Termbin
+PS C:\> Get-Process | Out-String | Out-Termbin
 https://termbin.com/abc123
 ```
 
@@ -33,7 +33,7 @@ This will take the output of Get-Process and upload it to Termbin.  If successfu
 
 ### Example 2
 ```powershell
-PS C:\> Get-Content -Raw 'logfile.txt' | Out-String | Send-Termbin
+PS C:\> Get-Content -Raw 'logfile.txt' | Out-String | Out-Termbin
 https://termbin.com/def456
 ```
 
@@ -113,6 +113,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Uri, if successful;  $null otherwise.
 ## NOTES
 In almost all cases, you will want to pipe this cmdlet's input through Out-String so that it is normalized.  If this cmdlet's input does not have a .ToString() method, you may wind up with a Termbin upload full of class names, or worse.
+
+In the past, this cmdlet was called Send-Termbin.  That alias still works.
 
 ## RELATED LINKS
 

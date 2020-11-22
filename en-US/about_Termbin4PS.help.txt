@@ -23,12 +23,12 @@ EXAMPLES
     be sure to specify the -Raw switch to Get-Content so that line endings are
     not stripped:
     
-    PS C:> Get-Content -Raw 'logfile.txt' | Send-Termbin
+    PS C:> Get-Content -Raw 'logfile.txt' | Out-Termbin
     
     Or, if you want to show someone which processes are running on your system,
     you can do something like this:
     
-    PS /Users/username> Get-Process | Out-String | Send-Termbin
+    PS /Users/username> Get-Process | Out-String | Out-Termbin
     
     Pipe it through Out-String so that 
 
@@ -42,7 +42,7 @@ TROUBLESHOOTING NOTE
     plain text input and output. However, PowerShell is written in .NET, and it 
     passes objects down the pipeline. Thus, you will usually find that you need
     to send your data through the cmdlet Out-String to convert it before piping
-    it into Send-Termbin.   If you forget to do this, chances are that you will
+    it into Out-Termbin.   If you forget to do this, chances are that you will
     end up with a Termbin page full of class names.  For example:
     
     PS C:\> Get-Process | Where {$_ -Match 'pwsh'}
@@ -61,8 +61,14 @@ TROUBLESHOOTING NOTE
     sure you include its -Raw switch; otherwise, PowerShell will strip the line
     endings, leaving you with a jumbled mess.
 
+HISTORY
+    Before version 1.1 of this module, the only cmdlet was called Send-Termbin.
+    I realized that Out was a better verb than Send, for what this module does.
+    You can still use the alias Send-Termbin, so you do not need to change your
+    scripts or your workflow.
+
 SEE ALSO
-    Send-Termbin
+    Out-Termbin
     Out-String
     https://termbin.com
     https://github.com/solusipse/fiche
