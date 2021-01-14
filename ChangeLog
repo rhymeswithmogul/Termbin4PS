@@ -1,4 +1,5 @@
 Version 1.1.1 (January 14, 2021)
+- Create Pester tests.
 - Better error handling when Termbin can't be contacted.
 - Update copyright year.
 

@@ -2,7 +2,8 @@ Termbin4PS -- history of user-visible changes.  Last update: 2020-09-30
 
 Termbin4PS version 1.1.1, relesaed 2021-01-14
 ---------------------------------------------
-Error handling is improved.
+Error handling is improved, and a Pester tests for the module is now available.
+However, Out-Termbin is unmodified. 
 
 Termbin4PS version 1.1, released 2020-11-22
 ---------------------------------------------

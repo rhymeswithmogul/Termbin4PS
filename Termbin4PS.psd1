@@ -105,7 +105,8 @@ FileList = @(
     'NEWS',
     'README.md',
     'Termbin4PS.psd1',
-    'Termbin4PS.psm1'
+    'Termbin4PS.psm1',
+    'Termbin4PS.Tests.ps1'
 )
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
