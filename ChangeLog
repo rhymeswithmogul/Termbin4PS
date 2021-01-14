@@ -1,3 +1,6 @@
+Version 1.1.1 (January 14, 2021)
+- Better error handling when Termbin can't be contacted.
+
 Version 1.1 (November 22, 2020)
 - Renamed Send-Termbin to Out-Termbin.
 - Defined Send-Termbin as an alias for Out-Termbin.

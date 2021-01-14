@@ -69,8 +69,8 @@ Function Out-Termbin {
 				$buffer = New-Object -TypeName Byte[] -ArgumentList $bufferSize
 				$read = $stream.Read($buffer, 0, $bufferSize)
 			}
-			Catch [IOException] {
-				Write-Error "Could not connect to $HostName within $($Timeout / 1000) seconds."
+			Catch [IO.IOException] {
+				Write-Error "Could not connect to Termbin.com within $($Timeout / 1000) seconds."
 			}
 			Finally {
 				Write-Debug 'Disposing of the stream objects'

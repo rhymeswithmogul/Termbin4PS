@@ -23,7 +23,7 @@
 RootModule = 'Termbin4PS.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.1'
+ModuleVersion = '1.1.1'
 
 # Supported PSEditions
 CompatiblePSEditions = @('Desktop', 'Core')
@@ -35,7 +35,7 @@ GUID = '1b8e61a7-aba7-4966-a6b8-047c09679206'
 Author = 'Colin Cogle <colin@colincogle.name>'
 
 # Copyright statement for this module
-Copyright = '(c) 2020 Colin Cogle.  Licensed under AGPLv3.  All rights reserved.'
+Copyright = '(c) 2020-2021 Colin Cogle.  Licensed under AGPLv3.  All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'A PowerShell module for piping output to Termbin.'
