@@ -34,14 +34,14 @@ Function Out-Termbin {
 
 	Begin {
 		# This will be sent to Termbin.
-		$toSend = ""
+		$toSend = [Text.StringBuilder]::new()
 	}
 	
 	Process {
 		# Take each line of pipeline input and append it to our string to send.
 		ForEach ($line in $InputObject) {
 			Write-Debug "Preparing to send $($line.Length) more characters."
-			$toSend += $line
+			$null = $toSend.AppendLine($line)
 		}
 	}
 
@@ -61,7 +61,7 @@ Function Out-Termbin {
 
 				Write-Debug "Sending $($toSend.Length) characters to Termbin"
 				$writer = [IO.StreamWriter]::new($stream)
-				$writer.WriteLine($toSend)
+				$writer.WriteLine($toSend.ToString())
 				$writer.Flush()
 
 				Write-Debug 'Receiving the URL from Termbin'

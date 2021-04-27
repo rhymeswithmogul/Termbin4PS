@@ -1,3 +1,8 @@
+Version 1.1.2 (April 27, 2021)
+- Improved handling of line endings. Thank you to @johnjohnk2 for reporting the
+  bug, and thank you to @indented-automation for the suggested improvement.
+  <https://github.com/rhymeswithmogul/Termbin4PS/issues/1>
+
 Version 1.1.1 (January 14, 2021)
 - Create Pester tests.
 - Better error handling when Termbin can't be contacted.
