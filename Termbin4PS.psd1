@@ -130,7 +130,7 @@ PrivateData = @{
         ReleaseNotes = 'https://github.com/rhymeswithmogul/Termbin4PS/blob/main/NEWS'
 
         # Prerelease string of this module
-        Prerelease = 'beta'
+        Prerelease = ''
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         RequireLicenseAcceptance = $false

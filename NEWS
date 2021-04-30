@@ -1,6 +1,6 @@
-Termbin4PS -- history of user-visible changes.  Last update: 2020-09-30
+Termbin4PS -- history of user-visible changes.
 
-Termbin4PS version 1.1.2, released 2021-04-27
+Termbin4PS version 1.1.2, released 2021-04-30
 ---------------------------------------------
 Improved handling of line endings.  Thank you to @johnjohnk2 for reporting this
 bug, and thank you to @indented-automation for the suggested improvement.

@@ -1,4 +1,7 @@
-Version 1.1.2 (April 27, 2021)
+Version 1.1.2 (April 30, 2021)
+- No changes from 1.1.2-beta.
+
+Version 1.1.2-beta (April 27, 2021)
 - Improved handling of line endings. Thank you to @johnjohnk2 for reporting the
   bug, and thank you to @indented-automation for the suggested improvement.
   <https://github.com/rhymeswithmogul/Termbin4PS/issues/1>
