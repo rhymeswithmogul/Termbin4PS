@@ -1,6 +1,6 @@
 # Termbin4PS
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f136d39acc914277bc1db3f6c85c6906)](https://app.codacy.com/gh/rhymeswithmogul/Termbin4PS?utm_source=github.com\&utm_medium=referral\&utm_content=rhymeswithmogul/Termbin4PS\&utm_campaign=Badge_Grade_Settings) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/Termbin4PS?style=plastic)](https://powershellgallery.com/packages/Termbin4PS/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f136d39acc914277bc1db3f6c85c6906)](https://app.codacy.com/gh/rhymeswithmogul/Termbin4PS?utm_source=github.com\&utm_medium=referral\&utm_content=rhymeswithmogul/Termbin4PS\&utm_campaign=Badge_Grade_Settings) [![PowerShell Gallery Version (including pre-releases)](https://img.shields.io/powershellgallery/v/Termbin4PS?include_prereleases)](https://powershellgallery.com/packages/Termbin4PS/) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/Termbin4PS)](https://powershellgallery.com/packages/Termbin4PS/)
 
 Native [Termbin](https://termbin.com) support for PowerShell!
 
