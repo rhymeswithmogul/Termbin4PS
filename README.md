@@ -1,4 +1,7 @@
 # Termbin4PS
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f136d39acc914277bc1db3f6c85c6906)](https://app.codacy.com/gh/rhymeswithmogul/Termbin4PS?utm_source=github.com&utm_medium=referral&utm_content=rhymeswithmogul/Termbin4PS&utm_campaign=Badge_Grade_Settings)
+
 Native [Termbin](https://termbin.com) support for PowerShell!
 
 ## Example
