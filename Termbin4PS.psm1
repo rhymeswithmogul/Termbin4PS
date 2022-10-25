@@ -28,8 +28,7 @@ Function Out-Termbin {
 		[Parameter(Position=0, ValueFromPipeline)]
 		[String[]] $InputObject,
 
-		[ValidateRange(1, [Int32]::MaxValue)]
-		[Int32] $Timeout = 30000
+		[UInt32] $Timeout = 30000
 	)
 
 	Begin {
