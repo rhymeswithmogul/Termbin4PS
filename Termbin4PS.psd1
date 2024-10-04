@@ -127,7 +127,7 @@ PrivateData = @{
 		# IconUri = ''
 
 		# ReleaseNotes of this module
-		ReleaseNotes = 'https://github.com/rhymeswithmogul/Termbin4PS/blob/main/NEWS'
+		ReleaseNotes = 'Adds support for sending data to Termbin-compatible third-party services.'
 
 		# Prerelease string of this module
 		Prerelease = ''
