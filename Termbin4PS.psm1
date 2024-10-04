@@ -58,7 +58,7 @@ Function Out-Termbin
 			"Upload a $($toSend.Length)-character string"
 		)) {
 			Try {
-				Write-Debug 'Opening a socket to Termbin'
+				Write-Debug "Opening a socket to ${HostName}:$Port"
 				$socket = [Net.Sockets.TcpClient]::new($HostName, $Port)
 				Write-Debug "Setting timeouts to $Timeout milliseconds"
 				$socket.SendTimeout = $Timeout
@@ -88,7 +88,7 @@ Function Out-Termbin
 				}
 			}
 			
-			Write-Debug 'Encoding the string and showing it to the user'
+			Write-Debug 'Encoding the URL and showing it to the user'
 			Return ([Text.ASCIIEncoding]::new()).GetString($buffer, 0, $read)
 		}
 	}
