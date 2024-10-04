@@ -24,3 +24,11 @@ PS C:\> Get-Process | Out-String | Out-Termbin
 ```
 
 In most cases, you will need to pass your output through PowerShell's `Out-String` so that PowerShell will convert the native .NET objects into simple strings.
+
+## Using Termbin-compatible Services
+
+If Termbin ever shuts down, don't worry;  you can use this module with compatible services.
+
+```powershell
+PS C:\> Get-Process | Out-String | Out-Termbin -HostName another.termbin.example -Port 9999
+```
