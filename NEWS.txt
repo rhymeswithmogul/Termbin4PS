@@ -1,5 +1,12 @@
 Termbin4PS -- history of user-visible changes.
 
+Termbin4PS version 2.0.0, released 2024-10-04
+---------------------------------------------
+Hi, it's been a while!  I don't know if there are any competitors for Termbin,
+but I was wondering what would happen if it shut down.  So, I added support to
+this module for using other servers!  Use the -HostName and -Port parameters to
+send your data somewhere besides Termbin.com, should you choose.
+
 Termbin4PS version 1.1.3, released 2022-10-25
 ---------------------------------------------
 No user-visible changes.

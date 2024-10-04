@@ -19,16 +19,23 @@
 
 #Requires -Version 5.0
 
-# .ExternalHelp Out-Termbin.xml
-Function Out-Termbin {
+Function Out-Termbin
+{
 	[CmdletBinding(SupportsShouldProcess, ConfirmImpact='Low')]
-	[OutputType([System.Uri])]
+	[OutputType([Uri])]
 	[Alias('Send-Termbin')]
 	Param(
 		[Parameter(Position=0, ValueFromPipeline)]
 		[String[]] $InputObject,
 
-		[UInt32] $Timeout = 30000
+		[Alias('Host', 'Server', 'ServerName')]
+		[ValidateNotNullOrEmpty()]
+		[String] $HostName = 'termbin.com',
+
+		[ValidateRange(1,65535)]
+		[UInt16] $Port = '9999',
+
+		[UInt32] $Timeout = 30000	# milliseconds
 	)
 
 	Begin {
@@ -46,30 +53,30 @@ Function Out-Termbin {
 
 	End {
 		If ($PSCmdlet.ShouldProcess(
-			"Upload a $($toSend.Length)-character string to termbin.com.",
-			'termbin.com',
+			"Upload a $($toSend.Length)-character string to ${HostName}:$Port.",
+			"${HostName}:$Port",
 			"Upload a $($toSend.Length)-character string"
 		)) {
 			Try {
 				Write-Debug 'Opening a socket to Termbin'
-				$socket = [Net.Sockets.TcpClient]::new('termbin.com', 9999)
+				$socket = [Net.Sockets.TcpClient]::new($HostName, $Port)
 				Write-Debug "Setting timeouts to $Timeout milliseconds"
 				$socket.SendTimeout = $Timeout
 				$socket.ReceiveTimeout = $Timeout
 				$stream = $socket.GetStream()
 
-				Write-Debug "Sending $($toSend.Length) characters to Termbin"
+				Write-Debug "Sending $($toSend.Length) characters to $HostName"
 				$writer = [IO.StreamWriter]::new($stream)
 				$writer.WriteLine($toSend.ToString())
 				$writer.Flush()
 
-				Write-Debug 'Receiving the URL from Termbin'
+				Write-Debug "Receiving the URL from $HostName"
 				$bufferSize = 1024
 				$buffer = New-Object -TypeName Byte[] -ArgumentList $bufferSize
 				$read = $stream.Read($buffer, 0, $bufferSize)
 			}
 			Catch [IO.IOException] {
-				Write-Error "Could not connect to Termbin.com within $($Timeout / 1000) seconds."
+				Write-Error "Could not connect to ${HostName}:$Port within $($Timeout / 1000) seconds."
 			}
 			Finally {
 				Write-Debug 'Disposing of the stream objects'

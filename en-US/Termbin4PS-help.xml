@@ -6,11 +6,11 @@
       <command:verb>Out</command:verb>
       <command:noun>Termbin</command:noun>
       <maml:description>
-        <maml:para>Send some text to Termbin.</maml:para>
+        <maml:para>Send some text to Termbin (or any compatible service).</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>This cmdlet will take some input and upload it to termbin.com for easy sharing with others.  If successful, it will return a URL pointing to your output.</maml:para>
+      <maml:para>This cmdlet will take some input and upload it to Termbin.com (or any compatible service) for easy sharing with others.  If successful, it will return a URL pointing to your output.</maml:para>
       <maml:para>When using this cmdlet, you more than likely want to pipe your input through Out-String beforehand.</maml:para>
     </maml:description>
     <command:syntax>
@@ -18,9 +18,9 @@
         <maml:name>Out-Termbin</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
           <maml:name>InputObject</maml:name>
-          <maml:Description>
-            <maml:para>One or more strings to send to Termbin.</maml:para>
-          </maml:Description>
+          <maml:description>
+            <maml:para>One or more strings to send to Termbin (or the specified hostname).</maml:para>
+          </maml:description>
           <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
           <dev:type>
             <maml:name>String[]</maml:name>
@@ -30,21 +30,21 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Timeout</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>This cmdlet will wait a specified number of milliseconds before returning a failure.  For most people, 30,000 ms (30 s) will be more than enough time.  However, if you are behind a very slow connection, you may want to increase this value.  You may specify any value from 1 ms to 2,147,473,647 ms.  The value 0 will cause this cmdlet to wait forever.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
           <dev:type>
-            <maml:name>Int32</maml:name>
+            <maml:name>UInt32</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>30,000</dev:defaultValue>
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
           <maml:name>Confirm</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Prompts you for confirmation before running the cmdlet.  This cmdlet is non-destructive, and will only prompt you if you have set your ConfirmPreference to "Low".</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
@@ -53,23 +53,48 @@
         </command:parameter>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
           <maml:name>WhatIf</maml:name>
-          <maml:Description>
+          <maml:description>
             <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-          </maml:Description>
+          </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Host, Server, ServerName">
+          <maml:name>HostName</maml:name>
+          <maml:description>
+            <maml:para>By default, this module sends data to Termbin.com.  If there is a compatible third-party service you'd like to use, specify its hostname here.</maml:para>
+            <maml:para>By using Termbin (or any other server), you agree to its terms of service.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>termbin.com</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>Specify the port used to reach the destination server specified by -HostName.  The default Termbin port is 9999.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+          <dev:type>
+            <maml:name>UInt16</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>9999</dev:defaultValue>
+        </command:parameter>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
         <maml:name>Confirm</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Prompts you for confirmation before running the cmdlet.  This cmdlet is non-destructive, and will only prompt you if you have set your ConfirmPreference to "Low".</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -79,9 +104,9 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none">
         <maml:name>InputObject</maml:name>
-        <maml:Description>
-          <maml:para>One or more strings to send to Termbin.</maml:para>
-        </maml:Description>
+        <maml:description>
+          <maml:para>One or more strings to send to Termbin (or the specified hostname).</maml:para>
+        </maml:description>
         <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
         <dev:type>
           <maml:name>String[]</maml:name>
@@ -91,21 +116,21 @@
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Timeout</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>This cmdlet will wait a specified number of milliseconds before returning a failure.  For most people, 30,000 ms (30 s) will be more than enough time.  However, if you are behind a very slow connection, you may want to increase this value.  You may specify any value from 1 ms to 2,147,473,647 ms.  The value 0 will cause this cmdlet to wait forever.</maml:para>
-        </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt32</command:parameterValue>
         <dev:type>
-          <maml:name>Int32</maml:name>
+          <maml:name>UInt32</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>30,000</dev:defaultValue>
       </command:parameter>
       <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
         <maml:name>WhatIf</maml:name>
-        <maml:Description>
+        <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
-        </maml:Description>
+        </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
           <maml:name>SwitchParameter</maml:name>
@@ -113,14 +138,39 @@
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="Host, Server, ServerName">
+        <maml:name>HostName</maml:name>
+        <maml:description>
+          <maml:para>By default, this module sends data to Termbin.com.  If there is a compatible third-party service you'd like to use, specify its hostname here.</maml:para>
+          <maml:para>By using Termbin (or any other server), you agree to its terms of service.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>termbin.com</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>Specify the port used to reach the destination server specified by -HostName.  The default Termbin port is 9999.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">UInt16</command:parameterValue>
+        <dev:type>
+          <maml:name>UInt16</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>9999</dev:defaultValue>
+      </command:parameter>
     </command:parameters>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>String[]</maml:name>
+          <maml:name>System.String[]</maml:name>
         </dev:type>
         <maml:description>
-          <maml:para></maml:para>
+          <maml:para>This cmdlet accepts one or more strings from the pipeline.  They will be joined and sent to the server in one batch.</maml:para>
         </maml:description>
       </command:inputType>
     </command:inputTypes>
@@ -157,11 +207,19 @@ https://termbin.com/def456</dev:code>
           <maml:para>This will read the file logfile.txt and upload it to Termbin.  If successful, a URL will be returned.  When using Get-Content, be sure to include the -Raw parameter, as that cmdlet will strip line endings and leave you with barely-legible output.  Alternatively, you may pipe it through Out-String as in the previous example.</maml:para>
         </dev:remarks>
       </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-Content -Raw 'logfile.txt' | Out-String | Out-Termbin -HostName another.termbin.example -Port 9999
+https://another.termbin.example/1a2b3c4d</dev:code>
+        <dev:remarks>
+          <maml:para>This will read the file logfile.txt and upload it to the server, another.termbin.example (port 9999).  If successful, a URL will be returned.</maml:para>
+        </dev:remarks>
+      </command:example>
     </command:examples>
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version:</maml:linkText>
-        <maml:uri>https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/Out-Termbin_en-US.md</maml:uri>
+        <maml:uri>https://github.com/rhymeswithmogul/Termbin4PS/blob/main/man/en-US/Out-Termbin.md</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>about_Termbin4PS</maml:linkText>
@@ -172,7 +230,7 @@ https://termbin.com/def456</dev:code>
         <maml:uri></maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
-        <maml:linkText>Termbin:</maml:linkText>
+        <maml:linkText>Termbin</maml:linkText>
         <maml:uri>https://termbin.com</maml:uri>
       </maml:navigationLink>
       <maml:navigationLink>
