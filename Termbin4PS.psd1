@@ -98,12 +98,12 @@ AliasesToExport = @('Send-Termbin')
 FileList = @(
     'en-US/about_Termbin4PS.help.txt',
     'en-US/Termbin4PS-help.xml',
-    'AUTHORS',
-    'ChangeLog',
-    'COPYING',
-    'LICENSE',
-    'NEWS',
+    'AUTHORS.txt',
+    'ChangeLog.txt',
+    'LICENSE.md',
+    'NEWS.md',
     'README.md',
+    'SECURITY.md',
     'Termbin4PS.psd1',
     'Termbin4PS.psm1',
     'Termbin4PS.Tests.ps1'
