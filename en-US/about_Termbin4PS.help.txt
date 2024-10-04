@@ -1,8 +1,9 @@
 ﻿TOPIC
-    about_termbin4ps
+    about_Termbin4PS
 
 SHORT DESCRIPTION
-    Termbin4PS is a module that will upload its input to Termbin.
+    Termbin4PS is a module that will upload its input to Termbin, or any other
+    Termbin-compatible service.
 
 LONG DESCRIPTION
     Termbin is a wonderful online service (in this author's opinion) that takes
@@ -30,7 +31,13 @@ EXAMPLES
     
     PS /Users/username> Get-Process | Out-String | Out-Termbin
     
-    Pipe it through Out-String so that 
+    Pipe it through Out-String so that multiple objects get converted properly
+    to strings.
+
+    Finally, you can use other Termbin-compatible services by specifying that
+    service's hostname and port:
+
+    PS>  echo "Hello, World!" | Out-Termbin -HostName another.termbin -Port 9999
 
 NOTE
     This module is in no way related to Termbin, nor is it related to solusipse
@@ -66,6 +73,11 @@ HISTORY
     I realized that Out was a better verb than Send, for what this module does.
     You can still use the alias Send-Termbin, so you do not need to change your
     scripts or your workflow.
+
+LEGAL DISCLAIMER
+    By choosing to send data to Termbin, you agree implicitly to Termbin's terms
+    of service. Should you choose to use a third-party service (with -HostName),
+    then it is assumed that you agree to that other server's terms of service.
 
 SEE ALSO
     Out-Termbin

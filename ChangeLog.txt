@@ -1,4 +1,6 @@
-Next version
+Version 2.0.0 (October 4, 2024)
+- Support for sending data to any Termbin-compatible services, using the new
+  -HostName and -Port parameters.
 - Improve documentation packaging.
 
 Version 1.1.3 (October 25, 2022)
