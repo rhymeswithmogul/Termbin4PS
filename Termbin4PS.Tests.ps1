@@ -1,6 +1,6 @@
 <#
     Termbin4ps.Tests.ps1, tests for the Termbin4PS module
-    Copyright (C) 2020-2022 Colin Cogle
+    Copyright (C) 2020-2024 Colin Cogle
     Online at <https://github.com/rhymeswithmogul/Termbin4PS>
 
     This program is free software: you can redistribute it and/or modify it

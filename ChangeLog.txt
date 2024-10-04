@@ -1,3 +1,6 @@
+Next version
+- Improve documentation packaging.
+
 Version 1.1.3 (October 25, 2022)
 - Timeout values are now represented by UInt32 objects.  Removed validation.
 

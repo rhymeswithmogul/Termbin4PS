@@ -1,6 +1,6 @@
 <#
     Termbin4ps.psd1, module manifest for the Termbin4PS module
-    Copyright (C) 2020-2022 Colin Cogle
+    Copyright (C) 2020-2024 Colin Cogle
     Online at <https://github.com/rhymeswithmogul/Termbin4PS>
 
     This program is free software: you can redistribute it and/or modify it
@@ -35,7 +35,7 @@ GUID = '1b8e61a7-aba7-4966-a6b8-047c09679206'
 Author = 'Colin Cogle <colin@colincogle.name>'
 
 # Copyright statement for this module
-Copyright = '(c) 2020-2022 Colin Cogle.  Licensed under AGPLv3.  All rights reserved.'
+Copyright = '(c) 2020-2024 Colin Cogle.  Licensed under AGPLv3.  All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'A PowerShell module for piping output to Termbin.'
