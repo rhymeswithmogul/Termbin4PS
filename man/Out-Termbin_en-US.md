@@ -1,1 +1,1 @@
-./en-US/Out-Termbin_en-US.md
+./en-US/Out-Termbin.md
