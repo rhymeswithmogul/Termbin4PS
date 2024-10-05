@@ -101,7 +101,7 @@ FileList = @(
 	'AUTHORS.txt',
 	'ChangeLog.txt',
 	'LICENSE.md',
-	'NEWS.md',
+	'NEWS.txt',
 	'README.md',
 	'SECURITY.md',
 	'Termbin4PS.psd1',
